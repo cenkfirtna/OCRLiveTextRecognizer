@@ -32,10 +32,10 @@ class Program
            
                 using (var page = engine.Process(grayImage.ToBitmap()))
                 {
-                    // Tanınan metni al
+                    // Tanınan metni alır
                     string recognizedText = page.GetText();
 
-                    // Tanınan metni işle ve konsola yazdır
+                    // Tanınan metni işle ve konsola yazdırır
                     List<string> processedText = ProcessRecognizedText(recognizedText);
                     Console.WriteLine("Recognized Text:");
                     foreach (var line in processedText)
