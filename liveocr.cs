@@ -16,10 +16,10 @@ class Program
      
         VideoCapture capture = new VideoCapture(cameraIndex);
 
-        // Tesseract OCR ayarları
+ 
         using (var engine = new TesseractEngine("./tessdata", "eng", EngineMode.Default))
         {
-            // Ana döngü
+
             while (true)
             {
                
@@ -29,7 +29,7 @@ class Program
                 Mat grayImage = new Mat();
                 CvInvoke.CvtColor(frame, grayImage, ColorConversion.Bgr2Gray);
 
-                // OCR işlemi
+           
                 using (var page = engine.Process(grayImage.ToBitmap()))
                 {
                     // Tanınan metni al
@@ -44,10 +44,10 @@ class Program
                     }
                 }
 
-                // Canlı görüntüyü göster
+         
                 CvInvoke.Imshow("Live OCR", frame);
 
-                // Çıkış için 'ESC' tuşuna basıldığını kontrol et
+          
                 if (CvInvoke.WaitKey(1) == 27)
                     break;
             }
@@ -64,7 +64,7 @@ class Program
       
         string[] rawLines = recognizedText.Split('\n');
 
-        // Boşlukları ve gereksiz karakterleri temizleme
+      
         foreach (var line in rawLines)
         {
             string cleanedLine = line.Trim();
