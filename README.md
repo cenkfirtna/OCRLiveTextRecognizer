@@ -19,6 +19,4 @@ This C# project captures live video feed from a camera and recognizes text using
 3. Set the `cameraIndex` variable in the `Program.cs` file to the desired camera number.
 4. Run the project and observe live OCR results.
 
-## License
 
-This project is licensed under the MIT license. For details, see the [LICENSE.md](LICENSE.md) file.
